@@ -1,1 +1,1 @@
-# Rick and Morty Characters | Mostrans Frontend Web Technical Test
+# Rick and Morty Characters | Mostrans Application Develoepr Technical Test
