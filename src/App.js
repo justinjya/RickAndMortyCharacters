@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { CharactersList, CharacterDetails, LocationList, CharactersByLocation } from 'pages';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Mostrans Technical Test | Rick and Morty Characters</h1>
+      <Router>
+        <nav>
+          <Link to="/">Characters</Link>
+          <Link to="/locations">Locations</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<CharactersList />} />
+          <Route path="/characters/:id" element={<CharacterDetails />} />
+          <Route path="/locations" element={<LocationList />} />
+          <Route path="/locations/:location" element={<CharactersByLocation />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
